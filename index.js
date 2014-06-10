@@ -16,7 +16,6 @@ radio.begin(function () {
         tx = radio.openPipe('tx', 0xF0F0F0F0D2);
     console.log(tx);
     console.log(rx);
-    rx.pipe("TEST");
     tx.pipe("GAH");
     rx.pipe(tx);        // echo back everything
 });
