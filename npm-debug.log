@@ -1,0 +1,50 @@
+info it worked if it ends with ok
+verbose cli [ '/usr/bin/nodejs', '/usr/bin/npm', 'install', 'pi-spi' ]
+info using npm@1.1.4
+info using node@v0.6.19
+verbose config file /root/.npmrc
+verbose config file /usr/etc/npmrc
+verbose config file /usr/share/npm/npmrc
+verbose caching /home/pi/LightSwitch/package.json
+verbose loadDefaults mongo-server@0.0.1
+verbose caching /home/pi/LightSwitch/node_modules/pi-gpio/package.json
+verbose loadDefaults pi-gpio@0.0.5
+verbose caching /home/pi/LightSwitch/node_modules/jade/package.json
+verbose loadDefaults jade@1.1.5
+verbose caching /home/pi/LightSwitch/node_modules/express/package.json
+verbose loadDefaults express@3.3.4
+verbose from cache /home/pi/LightSwitch/package.json
+verbose readDependencies: using package.json deps
+verbose cache add [ 'pi-spi', null ]
+silly cache add: name, spec, args [ undefined, 'pi-spi', [ 'pi-spi', null ] ]
+verbose parsed url { pathname: 'pi-spi', path: 'pi-spi', href: 'pi-spi' }
+verbose addNamed [ 'pi-spi', '' ]
+verbose addNamed [ null, '' ]
+silly name, range, hasData [ 'pi-spi', '', false ]
+verbose raw, before any munging pi-spi
+verbose url resolving [ 'https://registry.npmjs.org/', './pi-spi' ]
+verbose url resolved https://registry.npmjs.org/pi-spi
+http GET https://registry.npmjs.org/pi-spi
+ERR! Error: failed to fetch from registry: pi-spi
+ERR!     at /usr/share/npm/lib/utils/npm-registry-client/get.js:139:12
+ERR!     at cb (/usr/share/npm/lib/utils/npm-registry-client/request.js:31:9)
+ERR!     at Request._callback (/usr/share/npm/lib/utils/npm-registry-client/request.js:136:18)
+ERR!     at Request.callback (/usr/lib/nodejs/request/main.js:119:22)
+ERR!     at Request.<anonymous> (/usr/lib/nodejs/request/main.js:212:58)
+ERR!     at Request.emit (events.js:88:20)
+ERR!     at ClientRequest.<anonymous> (/usr/lib/nodejs/request/main.js:412:12)
+ERR!     at ClientRequest.g (events.js:156:14)
+ERR!     at ClientRequest.emit (events.js:67:17)
+ERR!     at HTTPParser.parserOnIncomingClient [as onIncoming] (http.js:1256:7)
+ERR! You may report this log at:
+ERR!     <http://bugs.debian.org/npm>
+ERR! or use
+ERR!     reportbug --attach /home/pi/LightSwitch/npm-debug.log npm
+ERR! 
+ERR! System Linux 3.10.25+
+ERR! command "/usr/bin/nodejs" "/usr/bin/npm" "install" "pi-spi"
+ERR! cwd /home/pi/LightSwitch
+ERR! node -v v0.6.19
+ERR! npm -v 1.1.4
+ERR! message failed to fetch from registry: pi-spi
+verbose exit [ 1, true ]
