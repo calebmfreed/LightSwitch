@@ -19,10 +19,10 @@ spi.transfer(test, test.length, function (e,d) {
     else console.log("Got \""+d.toString()+"\" back.");
 
     if (test.toString() === d.toString()) {
-        console.log(msg);
+        console.log("Good Shit");
     } else {
         // NOTE: this will likely happen unless MISO is jumpered to MOSI
-        console.warn(msg);
+        console.warn("Things happened");
         process.exit(-2);
     }
 });
