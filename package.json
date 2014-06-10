@@ -4,7 +4,8 @@
   "private": true,
   "dependencies": {
     "express": "3.3.4",
-    "jade": "1.1.5"
+    "jade": "1.1.5",
+    "pi-spi"
   },
   "engines": {
     "node": "0.10.x"
