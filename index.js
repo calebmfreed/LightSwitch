@@ -9,22 +9,31 @@ var http = require('http'),
     path = require('path'),
     SPI = require('pi-spi');
 
-var spi = SPI.initialize("/dev/spidev0.0"),
-    test = Buffer("Hello, World!");
-
-// reads and writes simultaneously
-spi.transfer(test, test.length, function (e,d) {
-    if (e) console.error(e);
-    else console.log("Got \""+d.toString()+"\" back.");
-
-    if (test.toString() === d.toString()) {
-        console.log("Good Shit");
-    } else {
-        // NOTE: this will likely happen unless MISO is jumpered to MOSI
-        console.warn("Things happened");
-        process.exit(-2);
-    }
+var radio = require('nrf').connect(spiDev, cePin, irqPin);
+radio.channel(0x4c).dataRate('1Mbps').crcBytes(2).autoRetransmit({count:15, delay:4000});
+radio.begin(function () {
+    var rx = radio.openPipe('rx', 0xF0F0F0F0E1LL),
+        tx = radio.openPipe('tx', 0xF0F0F0F0D2LL);
+    rx.pipe(tx);        // echo back everything
 });
+
+
+// var spi = SPI.initialize("/dev/spidev0.0"),
+//     test = Buffer("Hello, World!");
+
+// // reads and writes simultaneously
+// spi.transfer(test, test.length, function (e,d) {
+//     if (e) console.error(e);
+//     else console.log("Got \""+d.toString()+"\" back.");
+
+//     if (test.toString() === d.toString()) {
+//         console.log("Good Shit");
+//     } else {
+//         // NOTE: this will likely happen unless MISO is jumpered to MOSI
+//         console.warn("Things happened");
+//         process.exit(-2);
+//     }
+// });
  
 var app = express();
 app.set('port', process.env.PORT || 3000);
