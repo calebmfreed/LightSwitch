@@ -17,6 +17,7 @@ radio.begin(function () {
     console.log(tx);
     console.log(rx);
     rx.pipe("TEST");
+    tx.pipe("GAH");
     rx.pipe(tx);        // echo back everything
 });
 
