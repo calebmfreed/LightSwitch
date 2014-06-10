@@ -7,11 +7,10 @@ var room2 = 0;
 
 var http = require('http'),
     express = require('express'),
-    path = require('path');
+    path = require('path'),
+    SPI = require('pi-spi');
 
-var SPI = require('pi-spi');
-
-var spi = SPI.initialize("/dev/spidev0.0"),
+var spi = SPI.initialize("/dev/spidev0.1"),
     test = Buffer("Hello, World!");
 
 // reads and writes simultaneously
