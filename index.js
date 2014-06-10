@@ -17,7 +17,7 @@ radio.begin(function () {
     console.log(tx);
     console.log(rx);
     rx.pipe(tx);        // echo back everything
-    //radio.sendPayload(0x01,1, function(){console.log("SHIt?")});
+    radio.sendPayload(0x01);
 });
 
 
