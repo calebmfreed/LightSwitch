@@ -1,6 +1,5 @@
 // Remaining things to add:
 // Communication with SPI wireless nodes
-// Potentially the PiDuino needs to be used here too.
 
 var room1 = 0;
 var room2 = 0;
@@ -10,7 +9,7 @@ var http = require('http'),
     path = require('path'),
     SPI = require('pi-spi');
 
-var spi = SPI.initialize("/dev/spidev0.1"),
+var spi = SPI.initialize("/dev/spidev0.0"),
     test = Buffer("Hello, World!");
 
 // reads and writes simultaneously
