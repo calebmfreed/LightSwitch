@@ -17,7 +17,7 @@ radio.begin(function () {
     console.log(tx);
     console.log(rx);
     rx.pipe(tx);        // echo back everything
-    radio.sendPayload(Buffer("HUH"), 'auto' ,function(){console.log("SHIt?")});
+    radio.sendPayload(Buffer("HUH"),function(){console.log("SHIt?")});
 });
 
 
