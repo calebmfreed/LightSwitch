@@ -14,6 +14,8 @@ radio.channel(0x4c).dataRate('1Mbps').crcBytes(2).autoRetransmit({count:15, dela
 radio.begin(function () {
     var rx = radio.openPipe('rx', 0xF0F0F0F0E1),
         tx = radio.openPipe('tx', 0xF0F0F0F0D2);
+    console.log(tx);
+    console.log(rx);
     rx.pipe(tx);        // echo back everything
 });
 
