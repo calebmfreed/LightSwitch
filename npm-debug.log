@@ -7,8 +7,6 @@ verbose config file /usr/etc/npmrc
 verbose config file /usr/share/npm/npmrc
 verbose caching /home/pi/LightSwitch/package.json
 verbose loadDefaults mongo-server@0.0.1
-verbose caching /home/pi/LightSwitch/node_modules/node-nrf/package.json
-verbose loadDefaults nrf@0.8.1
 verbose caching /home/pi/LightSwitch/node_modules/pi-gpio/package.json
 verbose loadDefaults pi-gpio@0.0.5
 verbose caching /home/pi/LightSwitch/node_modules/jade/package.json
