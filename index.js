@@ -17,9 +17,16 @@ radio.begin(function () {
     console.log(tx);
     //console.log(rx);
     rx.pipe(tx);        // echo back everything
-    rx.on('data', function(data){ 
-    console.log(['BROADCAST>>', JSON.stringify(data)].join(''));
-});
+    rx.write("Shit");
+    rx.on('data', function(data)
+    { 
+    	console.log(['BROADCAST>>', JSON.stringify(data)].join(''));
+	});
+
+    tx.on('error', function (e) 
+    {
+    	console.warn("Error sending reply.", e);
+    });
 });
 
 
