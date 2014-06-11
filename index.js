@@ -17,6 +17,9 @@ radio.begin(function () {
     console.log(tx);
     //console.log(rx);
     rx.pipe(tx);        // echo back everything
+    rx.on('data', function(data){ 
+    console.log(['BROADCAST>>', JSON.stringify(data)].join(''));
+});
 });
 
 
