@@ -22,6 +22,7 @@ radio.begin(function () {
     { 
     	console.log(['BROADCAST>>', JSON.stringify(data)].join(''));
 	});
+	console.log("After the rx.on");
 
     tx.on('error', function (e) 
     {
