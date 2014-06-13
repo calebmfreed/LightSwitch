@@ -9,7 +9,7 @@ var http = require('http'),
     path = require('path'),
     SPI = require('pi-spi');
 
-var radio = require('nrf').connect("/dev/spidev0.0", 22);
+var radio = require('nrf').connect("/dev/spidev0.0", 25, 24 );
 radio.channel(0x4c).dataRate('1Mbps').crcBytes(2).autoRetransmit({count:15, delay:4000});
 radio.begin(function () {
     var rx = radio.openPipe('rx', 0xF0F0F0F0E1),
@@ -17,17 +17,17 @@ radio.begin(function () {
     console.log(tx);
     //console.log(rx);
     rx.pipe(tx);        // echo back everything
-    tx.write("Shit");
-    rx.on('data', function(data)
-    {
-    	console.log(['BROADCAST>>', JSON.stringify(data)].join(''));
-	});
-	console.log("After the rx.on");
+ //    tx.write("Shit");
+ //    rx.on('data', function(data)
+ //    {
+ //    	console.log(['BROADCAST>>', JSON.stringify(data)].join(''));
+	// });
+	// console.log("After the rx.on");
 
-    tx.on('error', function (e) 
-    {
-    	console.warn("Error sending reply.", e);
-    });
+ //    tx.on('error', function (e) 
+ //    {
+ //    	console.warn("Error sending reply.", e);
+ //    });
 });
 
 
